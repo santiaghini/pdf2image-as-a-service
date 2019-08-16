@@ -7,6 +7,10 @@ RUN apt-get install -y locate \
                        libopenjp2-7 \
                        poppler-utils
 
+RUN apt update
+RUN apt-get update
+RUN apt-get upgrade
+RUN apt-get dist-upgrade
 RUN rm -rf /poppler_binaries;  mkdir /poppler_binaries;
 RUN updatedb
 RUN cp $(locate libpoppler.so) /poppler_binaries/.
